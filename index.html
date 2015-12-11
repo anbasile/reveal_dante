@@ -1,1 +1,609 @@
-“Hello, world”
+<!doctype html>
+<html lang="it">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>D(h)ante - La prospettiva delle digital humanities</title>
+
+		<meta name="description" content="Trasforazione di un corpus e training di un pos-tagger sull'italiano dantesco">
+		<meta name="author" content="Angelo Basile">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			  <section id="title">
+			    <p>Firenze - 12 Dicembre 2015</p>
+				  <h1>D(<span style="color:#42AFFA">h</span>)ante</h1>
+					<h3>La prospettiva delle digital humanities</h3>
+					<p>
+					  <small>
+					    <a href="http://anbasile.github.io">Angelo Basile</a> / <a href="https://dh.fbk.eu/">Digital Humanities Joint Project @ FBK</a>
+					  </small>
+					</p>
+					<aside class="notes">Buongiorno a tutti, sono Angelo Basile. Mi sono laureato in filosofia a Trento
+					  </aside>
+				</section>
+
+				<section id="affiliation" data-background="white" data-background-transition="zoom">
+				  <img data-src="pics/dhfbk.png" alt="dhlogo">
+				  <h2>Digital Humanities <br />Joint Project</h2>
+				  <p>
+				    <small>
+				      Menini - Moretti - Sangati - Sprugnoli - Tonelli
+				    </small>
+				  </p>
+				<aside class="notes">
+				  e subito dopo la laurea ho svolto un periodo di tirocinio presso la Fondazione Bruno Kessler, sempre con sede a Trento. Il lavoro di cui vi parlo è il frutto di questa collaborazione con l'unità di digital humanities della Fondazione.
+				</aside>
+				</section>
+
+				<section id="index">
+					<h2>Indice</h2>
+					<ol>
+						<li class="fragment grow">Informatica umanistica</li>
+						<li class="fragment grow">Il corpus dantesco</li>
+						<li class="fragment grow">Analizzatore grammaticale</li>
+						<li class="fragment grow">Demo</li>
+						<li class="fragment grow">Conclusione</li>
+					</ol>
+					<aside class="notes">
+					  Dirò due parole sul contesto epistemologico in cui è nato questo lavoro,l'informatica umanistica; quindi procederò a descrivere le due risorse che sono state create e se resta tempo vorrei proporre una breve demo di ALCIDE, il sistema sviluppato dall'unità di DH per l'analisi di contenuti storici e all'interno del quale sta venendo inserito anche il lavoro su Dante e quindi in circa 20 minuti dovrei arrivare alla conclusione
+					  </aside>
+				</section>
+				
+				<section id="dh">
+				  <section>
+				    <h2>Informatica umanistica</h2>
+				    <aside class="notes">
+				      Non esiste una definizione accettata da tutti di informatica umanistica e questo significa che può voler dire tante cose.
+				      </aside>
+				  </section>
+				  <section>
+				    <h3>padre Busa</h3>
+				    <img data-src="pics/busa.jpg" alt="padre Busa">
+				    <aside class="notes">
+				      Nella foto assieme a Paolo VI potete vedere colui che potrebbe essere definito il primo umanistica digitale, padre Roberto Busa, un gesuita milanese, e i volumi che sta mostrando al papa fanno parte dell'<i>Index Thomisticus</i>: una edizione lemmatizzata delle opere di Tommaso che è stata compilata con tecniche automatiche grazie al supporto di IBM. Un aneddoto su padre Busa per capire la portata dell'opera:
+				      </aside>
+				  </section>
+				  <section>
+				    <p>Linguistica computazionale</p>
+				    <aside class="notes">
+				      Fin dall'inizio le digital humanities sono fortemente legate alla linguistica computazionale e questo è un bene perché questa oggi ha fatto grandi progressi e dispone di metodi molto efficaci che possiamo quindi utilizzare. Traduzione automatica, estrazione di informazioni, stilometria computazionale, problemi di attribuzione, sono tutti problemi che oggi possono essere affrontati con successo dalla linguistica computazionale. L'informatica umanistica può essere vista come analisi automatica di testi 
+				      </aside>
+				  </section>
+				  <section>
+				    <p>Analisi automatica di testi <span class="fragment">letterari</span></p>
+				  </section>
+				</section>
+
+				<section id="corpusdante">
+				  <section>
+				    <h2>Il corpus dantesco</h2>
+				  </section>
+				  
+				  <section>
+				    <h2>DanteSearch</h2>
+				    <p>www.perunaenciclopediadantescadigitale.eu</p>
+				  </section>
+
+				  <section>
+				    <ul>
+					<li>testi affidabili (collazione con le edizioni di riferimento)</li>
+					<li>XML</li>
+					<li>TEI</li>
+					<li>testo lemmatizzato</li>
+					<li>annotazione grammaticale e in parte sintattica</li>
+					</ul>
+				  </section>
+
+				  <section>
+				      <h2>Annotazione</h2>
+				      <p class="fragment">Manuale</p>
+				      <p class="fragment">Con esperti di dominio</p>
+				      <aside class="notes">
+					Il corpus DanteSearch è un modello dal punto di vista della annotazione. L'annotazione è stata fatta a mano per intero ed è stata fatta da esperti di dominio: in questo caso dottorandi o laureandi in letteratura italiana. 
+					</aside>
+				  </section>
+				  
+				    <section>
+				      <p>Nel mezzo del cammin di nostra vita</p>
+				    </section>
+
+				    <section>
+
+				    <table>
+				      <thead>
+					  <tr>
+					    <th>token</th>
+					    <th>lemma</th>
+					    <th>cat. grammaticale</th>
+					  </tr>
+				      </thead>
+				      <tbody>
+					<tr>
+					  <td>Nel</td>
+					  <td>il</td>
+					  <td>rdms</td>
+					</tr>
+					<tr>
+					  <td>mezzo</td>
+					  <td>in mezzo di</td>
+					  <td>eilaksl</td>
+					</tr>
+					<tr>
+					  <td>del</td>
+					  <td>il</td>
+					  <td>rdms</td>
+					</tr>
+					<tr>
+					  <td>cammin</td>
+					  <td>cammino</td>
+					  <td>sm2ms</td>
+					</tr>
+					
+				      </tbody>
+				    </table>
+				    </section>
+
+				</section>
+				
+				<section id="ourcorpus">
+				  <section>
+				    <h2>Documenti</h2>
+				    <ul>
+				      <li>Commedia</li>
+				      <li>Convivio</li>
+				      <li>Detto d'amore</li>
+				      <li>Rime</li>
+				      <li>Vita Nuova</li>
+				      <li>Fiore</li>
+				    </ul>
+				    <aside class="notes">
+				      6 documenti in forma mista tra versi e prosa
+				      </aside>
+				  </section>
+				  
+				  <section>
+					<h3>Una sintesi in numeri</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Documento</th>
+								<th>token</th>
+								<th>type</th>
+								<th>lex. richness</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>convivio</td>
+								<td>73457</td>
+								<td>6826</td>
+								<td>0.09</td>
+							</tr>
+							<tr>
+								<td>dettodamore</td>
+								<td>2503</td>
+								<td>766</td>
+								<td>0.31</td>
+							</tr>
+							<tr>
+								<td>fiore</td>
+								<td>23698</td>
+								<td>4420</td>
+								<td>0.19</td>
+							</tr>
+							<tr>
+								<td>inferno</td>
+								<td>34280</td>
+								<td>6704</td>
+								<td>0.19</td>
+							</tr>
+							<tr>
+								<td>paradiso</td>
+								<td>33717</td>
+								<td>6339</td>
+								<td>0.19</td>
+							</tr>
+							<tr>
+								<td>purgatorio</td>
+								<td>34146</td>
+								<td>6591</td>
+								<td>0.19</td>
+							</tr>
+							<tr>
+								<td>rime</td>
+								<td>12102</td>
+								<td>2733</td>
+								<td>0.22</td>
+							</tr>
+							<tr>
+								<td>vitanuova</td>
+								<td>18988</td>
+								<td>3004</td>
+								<td>0.16</td>
+							</tr>
+						</tbody>
+					</table>
+					<aside class="notes">
+					  questi sono i dati del corpus suddivisi per documento e in forma aggregata invece...
+					  </aside>
+				  </section>
+
+				  <section>
+				    <table>
+				      <thead>
+					  <tr>
+					    <th>token</th>
+					    <th>type</th>
+					    <th>lex. richness</th>
+					  </tr>
+				      </thead>
+				      <tbody>
+					<tr>
+					  <td>232891</td>
+					  <td>20562</td>
+					  <td>0.09</td>
+					</tr>
+				      </tbody>
+				    </table>
+				    <aside class="notes">
+				      ...vediamo che abbiamo 230 mila token, circa 20 mila parole diverse con una ricchezza lessicale del 9 %. La ricchezza lessicale è una misura discutibile ma in questo caso è stata calcolata come rapporto tra i token e i type. Se questo numero è uno vuol dire che una parola non viene mai usata più di una volta. In questo caso sappiamo che il vocabolario di dante costituisce il 9 % circa dei suoi testi
+				    </aside>
+				  </section>
+
+				    <section>
+				      <h2>Un esempio</h2>
+				      <pre><code class="hlxml">
+ <xml>
+  ...
+   <LM lemma="il" catg="rdms">Nel</LM>
+   <LM lemma="in mezzo di" catg="eilaksl">mezzo</LM>
+   <LM lemma="il" catg="rdms">del</LM>
+   <LM lemma="cammino" catg="sm2ms">cammin</LM>
+   <LM lemma="di" catg="epskg">di</LM>
+   <LM lemma="nostro" catg="as1fs">nostra</LM>
+   <LM lemma="vita" catg="sf1fs">vita</LM>
+  ...
+ </xml>
+				      </code></pre>
+				      <aside class="notes">
+					Questo formato rispetta le linee guida TEI, che è un consorzio per l'annotazione del testo digitale ed è molto utile per alcuni lavori ma presenti forti limiti per altri. Il lavoro fatto in fbk ha consentito di aggirare questi limiti grazie ad un diverso formato di cui vi parlo tra un attimo. Una breve sintesi del corpus: 
+					</aside>
+				      </section>
+				  
+				</section>
+
+
+
+				<section>
+				  <section>
+				    <h2>Elaborazione del corpus</h2>
+				  </section>
+				  <section id="tranformation">
+				    <ol>
+				      <li>full tokenization</li>
+				      <li>unione di lemmi multipli</li>
+				      <li>punteggiatura</li>
+				      <li>segmentazione della frase</li>
+				      <li>conversione del tagset</li>
+				    </ol>
+				  </section>
+
+				  <section>
+				    <h3>tokenizzazione</h3>
+				    <pre><code class="hlxml">
+ <xml>
+ ...
+ <LM lemma="quando che sia" catg="bl">
+quando che sia
+</LM>
+ ...
+ </xml>
+				    </code></pre>
+				        <table class="fragment">
+					  <thead>
+					    <tr>
+					      <th>token</th>
+					      <th>lemma</th>
+					      <th>POS</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td>quando</td>
+					      <td>B</td>
+					      <td>quando che sia</td>
+					    </tr>
+					    <tr>
+					      <td>che</td>
+					      <td>B</td>
+					      <td>quando che sia</td>
+					    </tr>
+					    <tr>
+					      <td>sia</td>
+					      <td>B</td>
+					      <td>quando che sia</td>
+					    </tr>
+					  </tbody>
+					</table>
+				  </section>
+
+				  <section>
+				    <h3>lemmi multipli</h3>
+				    <pre><code class="hlxml">
+ <xml>
+ ...
+<LM1>
+<LM lemma="il" catg="rdms">nel</LM>
+<LM lemma="in" catg="epaksl">nel</LM>
+</LM1>
+ ...
+ </xml>
+				    </code></pre>
+				        <table class="fragment">
+					  <thead>
+					    <tr>
+					      <th>token</th>
+					      <th>lemma</th>
+					      <th>POS</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td>nel</td>
+					      <td>RS/E</td>
+					      <td>il/in</td>
+					    </tr>
+					  </tbody>
+					</table>
+				  </section>
+
+
+				  <section>
+				    <h3>punteggiatura</h3>
+				    <pre><code class="hlxml">
+ <xml>
+ ...
+<LM [...]>alto</LM>,
+...
+<LM [...]>regge;</LM>
+
+ ...
+ </xml>
+				    </code></pre>
+				        <table class="fragment">
+					  <thead>
+					    <tr>
+					      <th>token</th>
+					      <th>lemma</th>
+					      <th>POS</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td>alto</td>
+					      <td>alto</td>
+					      <td>A</td>
+					    </tr>
+					    <tr>
+					      <td>,</td>
+					      <td>,</td>
+					      <td>XPW</td>
+					    </tr>
+					    <tr>
+					      <td>regge</td>
+					      <td>reggere</td>
+					      <td>VI</td>
+					    </tr>
+					    <tr>
+					      <td>;</td>
+					      <td>;</td>
+					      <td>XPO</td>
+					    </tr>
+					  </tbody>
+					</table>
+				  </section>
+
+				  <section>
+				    <h2>Tagset</h2>
+				    <table>
+					  <tbody>
+					    <tr>
+					      <td>a1fs</td>
+					      <td class="fragment">AS</td>
+					    </tr>
+					    <tr>
+					      <td>a2fs</td>
+					      <td class="fragment">AS</td>
+					    </tr>
+					    <tr>
+					      <td>a1ms</td>
+					      <td class="fragment">AS</td>
+					    </tr>
+					    <tr>
+					      <td>a2ms</td>
+					      <td class="fragment">AS</td>
+					    </tr>
+					    <tr>
+					      <td>...</td>
+					      <td>...</td>
+					    </tr>
+					    <tr>
+					      <td>2224</td>
+					      <td class="fragment">46</td>
+					    </tr>
+					  </tbody>
+				    </table>
+
+				  </section>
+
+				  <section>
+				    <table>
+				      <thead>
+					<tr>
+					  <th>token_id</th>
+					  <th>token</th>
+					  <th>lemma</th>
+					  <th>POS</th>
+					  <th>originalPOS</th>
+					  <th>sentence_id</th>
+					  <th>mwe</th>
+					</tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td></td>
+					      <td></td>
+					      <td></td>
+					      <td></td>
+					      <td></td>
+					      <td></td>
+					      <td></td>
+					    </tr>
+					
+					  </tbody>
+				    </table>
+				  </section>
+</section>
+
+<section id="postagger">
+  <section>
+    <h2>Un analizzatore grammaticale</h2>
+    <aside class="notes">
+      il nuovo formato consente per esempio di addestrate un analizzatore grammaticale
+      </aside>
+  </section>
+
+  <section>
+    <p>
+      Nel <span class="fragment" style="color:red">_RS</span>
+      mezzo <span class="fragment" style="color:red">_E</span>
+      del <span class="fragment" style="color:red">_RS</span>
+      cammin <span class="fragment" style="color:red">_SS</span>
+    </p>
+  </section>
+
+  <section>
+    <table>
+      <thead>
+	<tr>
+	  <th>tagger</th>
+	  <th>accuracy</th>
+	</tr>
+      </thead>
+      <tbody>
+	<tr>
+	  <td>TextPro*</td>
+	  <td>0.72</td>
+	</tr>
+	<tr>
+	  <td>TreeTagger</td>
+	  <td>0.90</td>
+	</tr>
+	<tr>
+	  <td>Stanford Tagger</td>
+	  <td>0.92</td>
+	</tr>
+      </tbody>
+    </table>
+    <aside class="notes">
+    </aside>
+  </section>
+  
+  
+</section>
+
+
+<section id="demo">
+  <h2>ALCIDE</h2>
+  <p class="fragment">
+    <span style="color:#42AFFA">A</span>nalysis of
+    <span style="color:#42AFFA">L</span>anguage and
+    <span style="color:#42AFFA">C</span>ontent
+    <span style="color:#42AFFA">I</span>n a
+    <span style="color:#42AFFA">D</span>igital
+    <span style="color:#42AFFA">E</span>nvironment
+    </p>
+  </section>
+
+<section id="byebye">
+  <section style="text-align: left;" data-background="#dddddd" data-background-transition="zoom">
+    <h1>Domande?</h1>
+  </section>
+
+  <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+    <h1>Grazie</h1>
+    <p>
+      <small>
+	<a href="http://anbasile.github.io">Angelo Basile</a> / <a href="https://dh.fbk.eu/">Digital Humanities Joint Project @ FBK</a>
+	<br />
+	angelo.basile@alumni.unitn.it
+      </small>
+    </p>
+
+  </section>
+
+</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
