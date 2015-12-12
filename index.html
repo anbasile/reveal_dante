@@ -59,7 +59,7 @@
 				    </small>
 				  </p>
 				<aside class="notes">
-				  e subito dopo la laurea ho svolto un periodo di tirocinio presso la Fondazione Bruno Kessler, sempre con sede a Trento. Il lavoro di cui vi parlo è il frutto di questa collaborazione con l'unità di digital humanities della Fondazione.
+				  e subito dopo la laurea ho svolto un periodo di tirocinio presso la Fondazione Bruno Kessler, sempre con sede a Trento. In FBK esiste una unità, diretta da Sara Tonelli che ringrazio per aver accettato il mio progetto su dante, che si occupa esclusivamente di informatica umanistica
 				</aside>
 				</section>
 
@@ -81,12 +81,12 @@
 				  <section>
 				    <h2>Informatica umanistica</h2>
 				    <aside class="notes">
-				      Non esiste una definizione accettata da tutti di informatica umanistica e questo significa che può voler dire tante cose.
+				      Non esiste una definizione accettata da tutti di informatica umanistica e questo significa che può voler dire tante cose. Oggi vi propongo un modo in cui può essere declinata.
 				      </aside>
 				  </section>
 				  <section>
 				    <h3>padre Busa</h3>
-				    <img data-src="pics/busa.jpg" alt="padre Busa">
+k				    <img data-src="pics/busa.jpg" alt="padre Busa">
 				    <aside class="notes">
 				      Nella foto assieme a Paolo VI potete vedere colui che potrebbe essere definito il primo umanistica digitale, padre Roberto Busa, un gesuita milanese, e i volumi che sta mostrando al papa fanno parte dell'<i>Index Thomisticus</i>: una edizione lemmatizzata delle opere di Tommaso che è stata compilata con tecniche automatiche grazie al supporto di IBM. Un aneddoto su padre Busa per capire la portata dell'opera:
 				      </aside>
@@ -99,6 +99,12 @@
 				  </section>
 				  <section>
 				    <p>Analisi automatica di testi <span class="fragment">letterari</span></p>
+				    <aside class="notes">
+				      distant reading
+				      close reading
+				      franco moretti
+				      
+				      </aside>
 				  </section>
 				</section>
 
@@ -117,8 +123,8 @@
 					<li>testi affidabili (collazione con le edizioni di riferimento)</li>
 					<li>XML</li>
 					<li>TEI</li>
-					<li>testo lemmatizzato</li>
-					<li>annotazione grammaticale e in parte sintattica</li>
+					<li>lemmatizzazione</li>
+					<li>annotazione grammaticale e sintattica</li>
 					</ul>
 				  </section>
 
@@ -308,7 +314,7 @@
 				  </section>
 				  <section id="tranformation">
 				    <ol>
-				      <li>full tokenization</li>
+				      <li>tokenizzazione esaustiva</li>
 				      <li>unione di lemmi multipli</li>
 				      <li>punteggiatura</li>
 				      <li>segmentazione della frase</li>
@@ -331,8 +337,8 @@ quando che sia
 					  <thead>
 					    <tr>
 					      <th>token</th>
-					      <th>lemma</th>
 					      <th>POS</th>
+					      <th>lemma</th>
 					    </tr>
 					  </thead>
 					  <tbody>
@@ -465,6 +471,7 @@ quando che sia
 				  </section>
 
 				  <section>
+				    <h2>RISULTATO</h2>
 				    <table>
 				      <thead>
 					<tr>
@@ -474,22 +481,39 @@ quando che sia
 					  <th>POS</th>
 					  <th>originalPOS</th>
 					  <th>sentence_id</th>
-					  <th>mwe</th>
 					</tr>
 					  </thead>
 					  <tbody>
 					    <tr>
-					      <td></td>
-					      <td></td>
-					      <td></td>
-					      <td></td>
-					      <td></td>
-					      <td></td>
-					      <td></td>
+					      <td>0</td>
+					      <td>Per</td>
+					      <td>per</td>
+					      <td>E</td>
+					      <td>epsf</td>
+					      <td>1</td>
+					    </tr>
+					    <tr>
+					      <td>1</td>
+					      <td>correr</td>
+					      <td>correre</td>
+					      <td>VI</td>
+					      <td>vta2fp</td>
+					      <td>1</td>
+					    </tr>
+					    <tr>
+					      <td>2</td>
+					      <td>miglior</td>
+					      <td>migliore</td>
+					      <td>AP</td>
+					      <td>a2fp</td>
+					      <td>1</td>
 					    </tr>
 					
 					  </tbody>
 				    </table>
+				    <aside class="notes">
+				      i dati sono ora organizzati in forma matriciale che è la forma canonica per l'analisi statistica dei dati; delle parole in questo caso.
+				      </aside>
 				  </section>
 </section>
 
@@ -514,8 +538,8 @@ quando che sia
     <table>
       <thead>
 	<tr>
-	  <th>tagger</th>
-	  <th>accuracy</th>
+	  <th>modello</th>
+	  <th>accuratezza</th>
 	</tr>
       </thead>
       <tbody>
@@ -534,6 +558,10 @@ quando che sia
       </tbody>
     </table>
     <aside class="notes">
+      perché è importante
+      un testo da inserire in un contesto
+      giuseppe cambiano
+      dante affascina
     </aside>
   </section>
   
@@ -554,9 +582,6 @@ quando che sia
   </section>
 
 <section id="byebye">
-  <section style="text-align: left;" data-background="#dddddd" data-background-transition="zoom">
-    <h1>Domande?</h1>
-  </section>
 
   <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
     <h1>Grazie</h1>
